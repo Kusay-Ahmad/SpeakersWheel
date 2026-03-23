@@ -1,0 +1,3194 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎡 S&CC Speakers Wheel 🎡</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary-color: #4a90e2;
+      --primary-rgb: 74, 144, 226;
+      --secondary-color: #357ab7;
+      --bg-gradient-start: #e6f0ff;
+      --bg-gradient-end: #ffffff;
+      --text-color: #1a3d7c;
+      --card-bg: #ffffff;
+      --shadow-color: rgba(0, 0, 0, 0.15);
+      --success-color: #28a745;
+      --danger-color: #dc3545;
+      --warning-color: #ffc107;
+      --input-border: #aaa;
+      --transition-speed: 0.3s;
+    }
+
+    [data-theme="dark"] {
+      --primary-color: #5ba3ff;
+      --primary-rgb: 91, 163, 255;
+      --secondary-color: #4a8cd6;
+      --bg-gradient-start: #1a1a2e;
+      --bg-gradient-end: #16213e;
+      --text-color: #e4e4e4;
+      --card-bg: #252a3f;
+      --shadow-color: rgba(0, 0, 0, 0.5);
+      --input-border: #555;
+    }
+
+    /* Nature Theme */
+    [data-theme="nature"] {
+      --primary-color: #2ecc71;
+      --primary-rgb: 46, 204, 113;
+      --secondary-color: #27ae60;
+      --bg-gradient-start: #e8f8f5;
+      --bg-gradient-end: #d5f4e6;
+      --text-color: #145a32;
+      --card-bg: #ffffff;
+      --shadow-color: rgba(46, 204, 113, 0.2);
+      --success-color: #27ae60;
+      --danger-color: #e67e22;
+      --warning-color: #f39c12;
+      --input-border: #7dcea0;
+      --transition-speed: 0.3s;
+    }
+
+    [data-theme="nature-dark"] {
+      --primary-color: #58d68d;
+      --primary-rgb: 88, 214, 141;
+      --secondary-color: #2ecc71;
+      --bg-gradient-start: #1b4332;
+      --bg-gradient-end: #081c15;
+      --text-color: #d5f4e6;
+      --card-bg: #2d6a4f;
+      --shadow-color: rgba(0, 0, 0, 0.5);
+      --success-color: #2ecc71;
+      --danger-color: #e67e22;
+      --warning-color: #f39c12;
+      --input-border: #52b788;
+      --transition-speed: 0.3s;
+    }
+
+    /* Christmas Theme */
+    [data-theme="christmas"] {
+      --primary-color: #c41e3a;
+      --primary-rgb: 196, 30, 58;
+      --secondary-color: #165b33;
+      --bg-gradient-start: #fff5f5;
+      --bg-gradient-end: #fef5e7;
+      --text-color: #7d1935;
+      --card-bg: #ffffff;
+      --shadow-color: rgba(196, 30, 58, 0.2);
+      --success-color: #165b33;
+      --danger-color: #b91c1c;
+      --warning-color: #d97706;
+      --input-border: #e8b4b8;
+      --transition-speed: 0.3s;
+    }
+
+    [data-theme="christmas-dark"] {
+      --primary-color: #ff4757;
+      --primary-rgb: 255, 71, 87;
+      --secondary-color: #2ed573;
+      --bg-gradient-start: #2c0e0e;
+      --bg-gradient-end: #0e2c1a;
+      --text-color: #ffeaa7;
+      --card-bg: #3d1a1a;
+      --shadow-color: rgba(0, 0, 0, 0.6);
+      --success-color: #2ed573;
+      --danger-color: #ee5a6f;
+      --warning-color: #feca57;
+      --input-border: #ff6b81;
+      --transition-speed: 0.3s;
+    }
+
+    /* Ocean Theme */
+    [data-theme="ocean"] {
+      --primary-color: #3498db;
+      --primary-rgb: 52, 152, 219;
+      --secondary-color: #2980b9;
+      --bg-gradient-start: #ebf5fb;
+      --bg-gradient-end: #d6eaf8;
+      --text-color: #1b4f72;
+      --card-bg: #ffffff;
+      --shadow-color: rgba(52, 152, 219, 0.2);
+      --success-color: #16a085;
+      --danger-color: #e67e22;
+      --warning-color: #f39c12;
+      --input-border: #85c1e2;
+      --transition-speed: 0.3s;
+    }
+
+    [data-theme="ocean-dark"] {
+      --primary-color: #5dade2;
+      --primary-rgb: 93, 173, 226;
+      --secondary-color: #3498db;
+      --bg-gradient-start: #1a2332;
+      --bg-gradient-end: #0f1419;
+      --text-color: #d6eaf8;
+      --card-bg: #2c3e50;
+      --shadow-color: rgba(0, 0, 0, 0.5);
+      --success-color: #1abc9c;
+      --danger-color: #e67e22;
+      --warning-color: #f39c12;
+      --input-border: #3498db;
+      --transition-speed: 0.3s;
+    }
+
+    /* Sunset Theme */
+    [data-theme="sunset"] {
+      --primary-color: #e67e22;
+      --primary-rgb: 230, 126, 34;
+      --secondary-color: #d35400;
+      --bg-gradient-start: #fef5e7;
+      --bg-gradient-end: #fdebd0;
+      --text-color: #7d4e23;
+      --card-bg: #ffffff;
+      --shadow-color: rgba(230, 126, 34, 0.2);
+      --success-color: #27ae60;
+      --danger-color: #c0392b;
+      --warning-color: #d68910;
+      --input-border: #f0b27a;
+      --transition-speed: 0.3s;
+    }
+
+    [data-theme="sunset-dark"] {
+      --primary-color: #f39c12;
+      --primary-rgb: 243, 156, 18;
+      --secondary-color: #e67e22;
+      --bg-gradient-start: #2e1a0a;
+      --bg-gradient-end: #1a0f06;
+      --text-color: #fdebd0;
+      --card-bg: #3d2817;
+      --shadow-color: rgba(0, 0, 0, 0.5);
+      --success-color: #52b788;
+      --danger-color: #dc2626;
+      --warning-color: #fb923c;
+      --input-border: #e67e22;
+      --transition-speed: 0.3s;
+    }
+
+    /* Purple Theme */
+    [data-theme="purple"] {
+      --primary-color: #9b59b6;
+      --primary-rgb: 155, 89, 182;
+      --secondary-color: #8e44ad;
+      --bg-gradient-start: #f4ecf7;
+      --bg-gradient-end: #e8daef;
+      --text-color: #4a235a;
+      --card-bg: #ffffff;
+      --shadow-color: rgba(155, 89, 182, 0.2);
+      --success-color: #27ae60;
+      --danger-color: #e74c3c;
+      --warning-color: #e67e22;
+      --input-border: #d2b4de;
+      --transition-speed: 0.3s;
+    }
+
+    [data-theme="purple-dark"] {
+      --primary-color: #bb8fce;
+      --primary-rgb: 187, 143, 206;
+      --secondary-color: #9b59b6;
+      --bg-gradient-start: #1f1329;
+      --bg-gradient-end: #110a19;
+      --text-color: #e8daef;
+      --card-bg: #3d2952;
+      --shadow-color: rgba(0, 0, 0, 0.5);
+      --success-color: #52b788;
+      --danger-color: #f87171;
+      --warning-color: #fb923c;
+      --input-border: #8e44ad;
+      --transition-speed: 0.3s;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+      min-height: 100vh;
+      color: var(--text-color);
+      transition: all var(--transition-speed);
+      overflow-x: hidden;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 0.8fr 2.4fr 0.8fr;
+      gap: 15px;
+      padding: 15px;
+      max-width: 1600px;
+      margin: 0 auto;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    header {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 15px;
+      background: var(--card-bg);
+      border-radius: 20px;
+      box-shadow: 0 8px 20px var(--shadow-color);
+      animation: fadeInDown 0.6s ease;
+    }
+
+    h1 {
+      font-size: 2.2em;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin: 0;
+      text-shadow: 0 2px 10px rgba(74, 144, 226, 0.3);
+      cursor: pointer;
+    }
+
+    h1:hover {
+      transform: scale(1.02);
+      transition: transform 0.2s ease;
+    }
+
+    .header-controls {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 15px;
+      box-shadow: 0 8px 20px var(--shadow-color);
+      animation: fadeInLeft 0.6s ease;
+      max-height: calc(100vh - 200px);
+      overflow-y: auto;
+      position: sticky;
+      top: 20px;
+    }
+
+    .sidebar::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .sidebar::-webkit-scrollbar-track {
+      background: var(--bg-gradient-start);
+      border-radius: 10px;
+    }
+
+    .sidebar::-webkit-scrollbar-thumb {
+      background: var(--primary-color);
+      border-radius: 10px;
+    }
+
+    .sidebar h3 {
+      text-align: center;
+      margin-bottom: 12px;
+      font-size: 1.2em;
+      color: var(--primary-color);
+    }
+
+    .name-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin: 6px 0;
+      padding: 6px;
+      background: var(--bg-gradient-start);
+      border-radius: 8px;
+      transition: all 0.2s;
+      animation: slideIn 0.3s ease;
+    }
+
+    .name-row:hover {
+      transform: translateX(-5px);
+      box-shadow: 0 4px 10px var(--shadow-color);
+    }
+
+    .name-row input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+      accent-color: var(--primary-color);
+    }
+
+    .name-row input[type="text"] {
+      flex: 1;
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: 2px solid var(--input-border);
+      background: var(--card-bg);
+      color: var(--text-color);
+      font-size: 0.85em;
+      transition: all 0.2s;
+    }
+
+    .name-row input[type="text"]:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+    }
+
+    .name-row.disabled {
+      opacity: 0.5;
+    }
+
+    /* Select dropdown styling */
+    select {
+      width: 100%;
+      padding: 10px 35px 10px 12px;
+      border-radius: 8px;
+      border: 2px solid var(--input-border);
+      background: var(--card-bg);
+      color: var(--text-color);
+      font-size: 0.95em;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s;
+      outline: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235ba3ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 8px center;
+      background-size: 20px;
+    }
+
+    select:hover {
+      border-color: var(--primary-color);
+      background-color: rgba(var(--primary-rgb), 0.05);
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px var(--shadow-color);
+    }
+
+    select:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+    }
+
+    select option {
+      background: var(--card-bg);
+      color: var(--text-color);
+      padding: 12px;
+      font-size: 0.95em;
+    }
+
+    /* Buttons */
+    button {
+      padding: 8px 16px;
+      font-size: 0.85em;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      transition: all 0.3s;
+      box-shadow: 0 4px 10px var(--shadow-color);
+      position: relative;
+      overflow: hidden;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px var(--shadow-color);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    button::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+
+    button:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .btn-icon {
+      padding: 10px 15px;
+      font-size: 1.2em;
+    }
+
+    .btn-success {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      filter: brightness(1.05);
+    }
+
+    .btn-danger {
+      background: linear-gradient(135deg, var(--danger-color), var(--danger-color));
+      filter: brightness(0.95) saturate(1.2);
+    }
+
+    .btn-warning {
+      background: linear-gradient(135deg, var(--warning-color), var(--warning-color));
+      filter: brightness(1.05) saturate(1.1);
+    }
+
+    .delete-btn {
+      background: var(--danger-color);
+      padding: 6px 10px;
+      font-size: 0.9em;
+      min-width: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.9;
+    }
+
+    .delete-btn:hover {
+      opacity: 1;
+    }
+
+    .controls-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .controls-grid button {
+      width: 100%;
+    }
+
+    /* Main Content - Wheel Area */
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      animation: fadeIn 0.6s ease;
+      position: sticky;
+      top: 20px;
+      align-self: flex-start;
+    }
+
+    #wheelContainer {
+      position: relative;
+      margin: 5px 0;
+    }
+
+    canvas {
+      border-radius: 50%;
+      box-shadow: 0 0 30px var(--shadow-color), 0 0 60px rgba(74, 144, 226, 0.3);
+      background: var(--card-bg);
+      cursor: pointer;
+      transition: all 0.3s;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    canvas:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 40px var(--shadow-color), 0 0 80px rgba(74, 144, 226, 0.5);
+    }
+
+    #result {
+      font-size: 1.3em;
+      font-weight: bold;
+      margin: 8px 0;
+      padding: 10px 20px;
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px var(--shadow-color);
+      min-height: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      animation: pulse 0.5s ease;
+      text-align: center;
+      gap: 10px;
+    }
+
+    #result:empty {
+      display: none;
+      min-height: 0;
+      padding: 0;
+      margin: 0;
+    }
+
+    .result-name {
+      font-size: 1em;
+      text-align: center;
+    }
+
+    .result-controls {
+      display: flex;
+      gap: 10px;
+      margin-top: 5px;
+      justify-content: center;
+    }
+
+    .result-controls.hidden {
+      display: none;
+    }
+
+    .result-controls button {
+      padding: 6px 12px;
+      font-size: 0.75em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-weight: 600;
+    }
+
+    .result-controls .pause-btn {
+      background: var(--warning-color);
+      color: white;
+    }
+
+    .result-controls .resume-btn {
+      background: var(--success-color);
+      color: white;
+    }
+
+    .result-controls .stop-btn {
+      background: var(--danger-color);
+      color: white;
+    }
+
+    .result-controls button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    #timer {
+      display: none; /* Timer now shows in wheel center */
+      font-size: 1.6em;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 15px;
+      background: linear-gradient(135deg, var(--card-bg), var(--bg-gradient-start));
+      color: var(--primary-color);
+      box-shadow: inset 0 0 20px var(--shadow-color);
+      min-width: 150px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    #timer.warning {
+      animation: shake 0.5s ease;
+      color: var(--danger-color);
+    }
+
+    .timer-controls {
+      display: none; /* Timer controls hidden - timer in wheel center */
+      gap: 8px;
+      margin-top: 6px;
+      justify-content: center;
+    }
+
+    .timer-controls button {
+      padding: 8px 15px;
+      font-size: 0.85em;
+    }
+
+    /* Right Sidebar - Stats & Settings */
+    .right-sidebar {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 15px;
+      box-shadow: 0 8px 20px var(--shadow-color);
+      animation: fadeInRight 0.6s ease;
+      max-height: calc(100vh - 200px);
+      overflow-y: auto;
+      position: sticky;
+      top: 20px;
+    }
+
+    .right-sidebar::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .right-sidebar::-webkit-scrollbar-track {
+      background: var(--bg-gradient-start);
+      border-radius: 10px;
+    }
+
+    .right-sidebar::-webkit-scrollbar-thumb {
+      background: var(--primary-color);
+      border-radius: 10px;
+    }
+
+    .stats-card, .settings-card {
+      margin-bottom: 15px;
+      padding: 12px;
+      background: var(--bg-gradient-start);
+      border-radius: 12px;
+    }
+
+    .stats-card h3, .settings-card h3 {
+      color: var(--primary-color);
+      margin-bottom: 12px;
+      font-size: 1.1em;
+      text-align: center;
+    }
+
+    /* Collapsible Settings */
+    .settings-card details {
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .settings-card summary {
+      color: var(--primary-color);
+      font-size: 1.1em;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+      padding: 8px;
+      background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.1), rgba(var(--primary-rgb), 0.05));
+      border-radius: 10px;
+      transition: all 0.3s;
+      list-style: none;
+      user-select: none;
+    }
+
+    .settings-card summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .settings-card summary::after {
+      content: '▼';
+      font-size: 0.9em;
+      margin-left: 10px;
+      transition: transform 0.3s ease;
+      display: inline-block;
+      opacity: 0.8;
+    }
+
+    .settings-card details[open] summary::after {
+      transform: rotate(180deg);
+      opacity: 1;
+    }
+
+    .settings-card summary:hover {
+      background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.2), rgba(var(--primary-rgb), 0.1));
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px var(--shadow-color);
+    }
+
+    .settings-content {
+      padding-top: 15px;
+      animation: slideDown 0.3s ease;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .stat-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px;
+      margin: 4px 0;
+      background: var(--card-bg);
+      border-radius: 6px;
+      border-left: 3px solid var(--primary-color);
+      font-size: 0.9em;
+    }
+
+    .stat-label {
+      font-weight: 600;
+    }
+
+    .stat-value {
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+
+    .setting-row {
+      margin: 12px 0;
+    }
+
+    .setting-row label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      font-size: 0.9em;
+    }
+
+    .setting-row input[type="range"] {
+      width: 100%;
+      accent-color: var(--primary-color);
+    }
+
+    .setting-row input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      border-radius: 8px;
+      border: 2px solid var(--input-border);
+      background: var(--card-bg);
+      color: var(--text-color);
+    }
+
+    .range-value {
+      display: inline-block;
+      margin-right: 10px;
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+
+    /* Toast Notifications */
+    .toast-container {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      pointer-events: none;
+    }
+
+    .toast {
+      background: var(--card-bg);
+      padding: 15px 25px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px var(--shadow-color);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      animation: slideDown 0.3s ease;
+      pointer-events: all;
+      min-width: 300px;
+      border-left: 4px solid var(--primary-color);
+    }
+
+    .toast.success { border-left-color: var(--success-color); }
+    .toast.error { border-left-color: var(--danger-color); }
+    .toast.warning { border-left-color: var(--warning-color); }
+
+    /* File Input */
+    input[type="file"] {
+      display: none;
+    }
+
+    /* History */
+    .history-item {
+      padding: 10px;
+      margin: 8px 0;
+      background: var(--card-bg);
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-right: 4px solid var(--primary-color);
+    }
+
+    .history-name {
+      font-weight: 600;
+    }
+
+    .history-time {
+      font-size: 0.85em;
+      opacity: 0.7;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-10px); }
+      75% { transform: translateX(10px); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar, .right-sidebar {
+        max-height: none;
+        position: relative;
+      }
+
+      header {
+        order: -1;
+      }
+
+      .main-content {
+        order: 0;
+      }
+
+      canvas {
+        width: 90vw !important;
+        height: 90vw !important;
+        max-width: 500px !important;
+        max-height: 500px !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8em;
+      }
+
+      #result {
+        font-size: 1.4em;
+        padding: 15px 20px;
+      }
+
+      #timer {
+        font-size: 1.8em;
+        padding: 15px 25px;
+      }
+
+      .controls-grid {
+        grid-template-columns: 1fr;
+      }
+
+      canvas {
+        width: 85vw !important;
+        height: 85vw !important;
+      }
+    }
+
+    /* Loading Spinner */
+    .spinner {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(255,255,255,.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    /* Toggle Switch */
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 30px;
+    }
+
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 30px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 22px;
+      width: 22px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: var(--primary-color);
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(30px);
+    }
+
+    .theme-toggle {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .top-bar {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 20px 0;
+    }
+
+    .header-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      position: relative;
+    }
+
+    .header-title-section {
+      text-align: center;
+    }
+
+    .header-controls-wrapper {
+      position: absolute;
+      right: 0;
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .header-datetime-wrapper {
+      display: none; /* Hide from header */
+    }
+
+    /* DateTime Info Bar - Below Header */
+    .datetime-info-bar {
+      background: linear-gradient(135deg, var(--bg-gradient-start), var(--card-bg));
+      padding: 15px 25px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 2px 10px var(--shadow-color);
+      border: 1px solid rgba(128, 128, 128, 0.1);
+      border-left: 4px solid var(--primary-color);
+      flex-wrap: wrap;
+      width: 100%;
+      text-align: center;
+    }
+
+    .quote-bar-text {
+      font-size: 1em;
+      font-style: italic;
+      color: var(--text-color);
+      line-height: 1.5;
+      max-width: 100%;
+      flex: 1;
+    }
+
+    .quote-bar-author {
+      font-size: 0.85em;
+      color: var(--primary-color);
+      font-weight: 600;
+      white-space: nowrap;
+      opacity: 0.9;
+    }
+
+    .quote-refresh-btn {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      font-size: 1.1em;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px var(--shadow-color);
+      flex-shrink: 0;
+      padding: 0;
+    }
+
+    .quote-refresh-btn svg {
+      transition: transform 0.3s ease;
+    }
+
+    .quote-refresh-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.4);
+      filter: brightness(1.1);
+    }
+
+    .quote-refresh-btn:hover svg {
+      transform: rotate(180deg);
+    }
+
+    .quote-refresh-btn:active {
+      transform: scale(0.95);
+      box-shadow: 0 2px 6px var(--shadow-color);
+    }
+
+    .quote-refresh-btn:active svg {
+      transform: rotate(180deg);
+    }
+
+    .top-bar-controls {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .control-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Quote of the Day */
+    .quote-section {
+      background: linear-gradient(135deg, var(--bg-gradient-start), var(--card-bg));
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-align: center;
+      border-left: 4px solid var(--primary-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    .quote-text {
+      font-size: 0.9em;
+      font-style: italic;
+      color: var(--text-color);
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    .quote-author {
+      font-size: 0.8em;
+      color: var(--primary-color);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    /* Date and Time */
+    .datetime-section {
+      background: linear-gradient(135deg, var(--bg-gradient-start), var(--card-bg));
+      padding: 8px 12px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      box-shadow: 0 2px 8px var(--shadow-color);
+      border-left: 3px solid var(--primary-color);
+    }
+
+    .datetime-item {
+      display: none; /* Hide datetime items */
+    }
+
+    .datetime-icon {
+      display: none;
+    }
+
+    .datetime-value {
+      display: none;
+    }
+
+    .datetime-info-bar .datetime-item {
+      display: none;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 20px 15px;
+      margin-top: 30px;
+      font-size: 0.85em;
+      color: var(--text-color);
+      border-top: 1px solid rgba(128, 128, 128, 0.2);
+      background: linear-gradient(to bottom, transparent, rgba(128, 128, 128, 0.05));
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      opacity: 0.75;
+      transition: all 0.3s ease;
+    }
+
+    .footer:hover {
+      opacity: 1;
+      background: linear-gradient(to bottom, transparent, rgba(128, 128, 128, 0.08));
+    }
+
+    .footer .heart {
+      color: #DC2626;
+      display: inline-block;
+      animation: heartbeat 1.5s ease-in-out infinite;
+      font-size: 1.1em;
+      margin: 0 2px;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      10%, 30% { transform: scale(1.1); }
+      20%, 40% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="toast-container" id="toastContainer"></div>
+
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="top-bar">
+        <!-- Main Row: Title -->
+        <div class="header-row">
+          <div class="header-title-section">
+            <h1 id="pageTitle" onclick="editTitle()" title="Click to edit">🎡 S&CC Speakers Wheel 🎡</h1>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Left Sidebar - Names List -->
+    <aside class="sidebar">
+      <h3>👥 Participants List</h3>
+      <div id="namesCheckboxes"></div>
+      <div class="controls-grid">
+        <button onclick="loadDefaultTeam()" style="grid-column: span 2;">👥 Load Default Team</button>
+        <button onclick="addName()" class="btn-success">➕ Add</button>
+        <button onclick="clearAll()" class="btn-danger">🗑️ Clear All</button>
+        <div style="display: flex; gap: 5px; grid-column: span 2;">
+          <button onclick="resetNames()" style="flex: 1;">✅ Enable All</button>
+          <button onclick="disableAllNames()" class="btn-warning" style="flex: 1;">❌ Disable All</button>
+        </div>
+        <button onclick="saveNames()">💾 Save List</button>
+        <button onclick="document.getElementById('fileInput').click()">📂 Load List</button>
+      </div>
+      <input type="file" id="fileInput" accept=".txt" onchange="loadNames(event)">
+    </aside>
+
+    <!-- Main Content - Wheel -->
+    <main class="main-content">
+      <!-- Quote Info Bar -->
+      <div class="datetime-info-bar">
+        <button onclick="changeQuote()" class="quote-refresh-btn" title="Get a new random quote">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="23 4 23 10 17 10"></polyline>
+            <polyline points="1 20 1 14 7 14"></polyline>
+            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+          </svg>
+        </button>
+        <span class="quote-bar-text" id="quoteTextBar">Loading...</span>
+        <span class="quote-bar-author" id="quoteAuthorBar">— Team</span>
+      </div>
+
+      <div id="wheelContainer">
+        <canvas id="wheel" width="600" height="600" onclick="startSpin()"></canvas>
+      </div>
+      <div id="result"></div>
+      <div class="timer-controls">
+        <button onclick="pauseTimer()" id="pauseBtn" class="btn-warning" style="display: none;">⏸️ Pause</button>
+        <button onclick="resumeTimer()" id="resumeBtn" class="btn-success" style="display: none;">▶️ Resume</button>
+        <button onclick="stopTimer()" id="stopBtn" class="btn-danger" style="display: none;">⏹️ Stop</button>
+      </div>
+      <div id="timer"></div>
+    </main>
+
+    <!-- Right Sidebar - Stats & Settings -->
+    <aside class="right-sidebar">
+      <!-- Statistics -->
+      <div class="stats-card">
+        <h3>📊 Statistics</h3>
+        <div class="stat-item">
+          <span class="stat-label">Remaining:</span>
+          <span class="stat-value" id="remainingCount">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Selected:</span>
+          <span class="stat-value" id="selectedCount">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Total Time:</span>
+          <span class="stat-value" id="totalTime">0:00</span>
+        </div>
+        <button onclick="resetStats()" class="btn-danger" style="width: 100%; margin-top: 15px;">
+          🔄 Reset Statistics
+        </button>
+      </div>
+
+      <!-- Participants Time -->
+      <div class="stats-card">
+        <h3>⏱️ Speaking Time</h3>
+        <div id="participantsTime"></div>
+      </div>
+
+      <!-- Settings -->
+      <div class="settings-card">
+        <details>
+          <summary>⚙️ Settings</summary>
+          <div class="settings-content">
+            <div class="setting-row">
+              <label>
+                <span class="range-value" id="spinDurationValue">3</span>
+                Spin Duration (seconds)
+              </label>
+              <input type="range" id="spinDuration" min="1" max="10" value="3" 
+                     oninput="updateSetting('spinDuration', this.value)">
+            </div>
+
+            <div class="setting-row">
+              <label>
+                <span class="range-value" id="timerDurationValue">90</span>
+                Timer Duration (seconds)
+              </label>
+              <input type="range" id="timerDuration" min="30" max="300" step="10" value="90" 
+                     oninput="updateSetting('timerDuration', this.value)">
+            </div>
+
+            <div class="setting-row">
+              <label>
+                <span class="range-value" id="wheelSpeedValue">5</span>
+                Wheel Speed
+              </label>
+              <input type="range" id="wheelSpeed" min="1" max="10" value="5" 
+                     oninput="updateSetting('wheelSpeed', this.value)">
+            </div>
+
+            <div class="setting-row">
+              <label>Sound Theme</label>
+              <select id="soundTheme" onchange="updateSoundTheme(this.value)">
+                <option value="classic">🎵 Classic</option>
+                <option value="nature">🌿 Nature</option>
+                <option value="bell">🔔 Bell</option>
+                <option value="christmas">🎄Xmas</option>
+              </select>
+            </div>
+
+            <div class="setting-row">
+              <label>🎨 Color Theme</label>
+              <select id="colorTheme" onchange="changeColorTheme(this.value)">
+                <option value="light">☀️ Classic Light</option>
+                <option value="dark">🌙 Classic Dark</option>
+                <option value="nature">🌿 Nature Light</option>
+                <option value="nature-dark">🌲 Nature Dark</option>
+                <option value="christmas">🎄 Christmas Light</option>
+                <option value="christmas-dark">🎅 Christmas Dark</option>
+                <option value="ocean">🌊 Ocean Light</option>
+                <option value="ocean-dark">🌊 Ocean Dark</option>
+                <option value="sunset">🌅 Sunset Light</option>
+                <option value="sunset-dark">🌆 Sunset Dark</option>
+                <option value="purple">💜 Purple Light</option>
+                <option value="purple-dark">💜 Purple Dark</option>
+              </select>
+            </div>
+
+            <div class="setting-row">
+              <label style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <span>🔊 Sound Enabled</span>
+                <label class="toggle-switch">
+                  <input type="checkbox" id="soundToggleSidebar" checked onchange="toggleSound()">
+                  <span class="slider"></span>
+                </label>
+              </label>
+            </div>
+
+            <button onclick="resetSettings()" class="btn-warning" style="width: 100%; margin-top: 10px;">
+              🔄 Reset to Defaults
+            </button>
+          </div>
+        </details>
+      </div>
+    </aside>
+  </div>
+
+  <script>
+    // ==================== Global Variables ====================
+    let allNames = ["Andreas", "Aram", "Dustin", "Jenni", "Kim", "Kusay", "Lea", "Lena", "Lukas", "Marcel", "Mareen", "Marina", "Matteo", "Matthias","Matilda", "Melanie", "Mirle", "Robert", "Roel", "Sabine", "Sattar", "Savas", "Veronika"];
+    let names = [...allNames];
+    let nameStates = {}; // Track checkbox states
+    let selectedByWheel = new Set(); // Track who was selected by wheel
+    let participantTimes = {}; // Track speaking time for each participant
+    let currentParticipant = null; // Currently speaking participant
+    let speakingStartTime = null; // When current participant started speaking
+    let lastSelectedPerson = null; // Track last selected person to disable on next spin
+    let stats = {
+      totalSpins: 0,
+      totalTime: 0, // Total speaking time in seconds
+      picks: {}
+    };
+
+    let canvas, ctx, resultDiv, timerDiv, checkboxesDiv;
+
+    let startAngle = 0;
+    let spinTimeout = null;
+    let spinTimeTotal = 3000;
+    let spinAngleStart = 0;
+    let spinTime = 0;
+    let lastRotation = 0;
+    let timerInterval = null;
+    let timerRunning = false;
+    let timerPaused = false;
+    let timerRemaining = 0;
+    let timerOvertime = 0;
+    let soundEnabled = true;
+    let isSpinning = false;
+    let soundTheme = 'classic';
+    let pulseAnimationId = null; // For pulsing animation
+
+    // Settings
+    let settings = {
+      spinDuration: 3,
+      timerDuration: 90,
+      wheelSpeed: 5
+    };
+
+    // Motivational Quotes for Teams
+const motivationalQuotes = [
+  { text: "Alone we can do so little; together we can do so much.", author: "Helen Keller" },
+  { text: "Teamwork makes the dream work.", author: "John C. Maxwell" },
+  { text: "Coming together is a beginning, staying together is progress, and working together is success.", author: "Henry Ford" },
+  { text: "Great things in business are never done by one person. They're done by a team of people.", author: "Steve Jobs" },
+  { text: "Individual commitment to a group effort—that is what makes a team work.", author: "Vince Lombardi" },
+  { text: "The strength of the team is each individual member. The strength of each member is the team.", author: "Phil Jackson" },
+  { text: "Talent wins games, but teamwork and intelligence win championships.", author: "Michael Jordan" },
+  { text: "Unity is strength... when there is teamwork and collaboration, wonderful things can be achieved.", author: "Mattie Stepanek" },
+  { text: "If everyone is moving forward together, then success takes care of itself.", author: "Henry Ford" },
+  { text: "The best teamwork comes from men who are working independently toward one goal in unison.", author: "James Cash Penney" },
+  { text: "Cooperation is the thorough conviction that nobody can get there unless everybody gets there.", author: "Virginia Burden" },
+  { text: "A successful team is a group of many hands and one mind.", author: "Bill Bethel" },
+  { text: "Teamwork begins by building trust. And the only way to do that is to overcome our need for invulnerability.", author: "Patrick Lencioni" },
+  { text: "In teamwork, silence isn't golden, it's deadly.", author: "Mark Sanborn" },
+  { text: "It is literally true that you can succeed best and quickest by helping others to succeed.", author: "Napoleon Hill" },
+  { text: "No one can whistle a symphony. It takes a whole orchestra to play it.", author: "H.E. Luccock" },
+  { text: "Remember, teamwork begins by building trust. And the only way to do that is to overcome our need for invulnerability.", author: "Patrick Lencioni" },
+  { text: "Find a group of people who challenge and inspire you, spend a lot of time with them, and it will change your life.", author: "Amy Poehler" },
+  { text: "The way a team plays as a whole determines its success.", author: "Babe Ruth" },
+  { text: "Trust is knowing that when a team member does push you, they're doing it because they care about the team.", author: "Patrick Lencioni" },
+  { text: "A strong team is not made of the strongest people, but of people who work well together.", author: "Wise Team Player" },
+  { text: "Success is never an accident; it happens when everyone works together toward one goal.", author: "Team Spirit" },
+  { text: "Teamwork is the fuel that allows common people to attain uncommon results.", author: "Andrew Carnegie" },
+  { text: "The difference between success and failure is a great team.", author: "John C. Maxwell" },
+  { text: "A team is where 'I' becomes 'we'.", author: "Team Wisdom" },
+  { text: "It doesn’t matter who scores the goal, as long as the team wins the game.", author: "Team Wisdom" },
+  { text: "A great team lifts up its weakest members, not leaves them behind.", author: "Team Wisdom" },
+  { text: "Champions are not made from power alone, but from cooperation and shared determination.", author: "Team Wisdom" },
+  { text: "When we work together, no goal is too far away.", author: "Team Wisdom" },
+  { text: "A team is the family you choose to achieve your dreams with.", author: "Team Wisdom" },
+  { text: "Every success has a team working behind the scenes.", author: "Team Wisdom" },
+  { text: "Teamwork means everyone wins together or loses together.", author: "Team Wisdom" },
+  { text: "Teamwork makes tough tasks easy and the impossible achievable.", author: "Team Wisdom" },
+  { text: "None of us is as smart as all of us.", author: "Ken Blanchard" },
+  { text: "When a team stands united, no obstacle can stop them.", author: "Team Wisdom" },
+  { text: "Trust and respect are the foundation of every successful team.", author: "Team Wisdom" },
+  { text: "An individual’s success is part of the team’s success, and the team’s success lifts everyone up.", author: "Team Wisdom" },
+  { text: "Working together doesn’t mean losing individuality, it means uniting it for a greater cause.", author: "Team Wisdom" },
+  { text: "Great teams are built on communication, trust, and mutual respect.", author: "Team Wisdom" }
+];
+
+
+    // Sound themes - All use synthesized sounds (Web Audio API)
+    const soundThemes = {
+      classic: {
+        tick: null,
+        ding: null,
+        spin: null,
+        alarm: null,
+        click: null,
+        success: null,
+        error: null
+      },
+      nature: {
+        tick: null,
+        ding: null,
+        spin: null,
+        alarm: null,
+        click: null,
+        success: null,
+        error: null
+      },
+      bell: {
+        tick: null,
+        ding: null,
+        spin: null,
+        alarm: null,
+        click: null,
+        success: null,
+        error: null
+      },
+      christmas: {
+        tick: null,
+        ding: null,
+        spin: null,
+        alarm: null,
+        click: null,
+        success: null,
+        error: null
+      }
+    };
+
+
+    // ==================== Quote and DateTime Functions ====================
+    function getQuoteOfTheDay() {
+      // Get the number of Fridays since epoch to ensure same quote for the whole week
+      const now = new Date();
+      
+      // Calculate days since epoch
+      const epoch = new Date(1970, 0, 1);
+      const daysSinceEpoch = Math.floor((now - epoch) / (1000 * 60 * 60 * 24));
+      
+      // Calculate which week we're in (Friday-based weeks)
+      // Find the most recent Friday (or today if it's Friday)
+      const dayOfWeek = now.getDay(); // 0 = Sunday, 5 = Friday
+      const daysSinceLastFriday = (dayOfWeek + 2) % 7; // Days since last Friday
+      const lastFridayDays = daysSinceEpoch - daysSinceLastFriday;
+      
+      // Calculate week number based on Fridays
+      const weekNumber = Math.floor(lastFridayDays / 7);
+      
+      // Use week number to select quote
+      const quoteIndex = weekNumber % motivationalQuotes.length;
+      return motivationalQuotes[quoteIndex];
+    }
+
+    function updateQuoteOfTheDay() {
+      const quote = getQuoteOfTheDay();
+      
+      // Update bar quote
+      const quoteBarText = document.getElementById('quoteTextBar');
+      const quoteBarAuthor = document.getElementById('quoteAuthorBar');
+      if (quoteBarText && quoteBarAuthor) {
+        quoteBarText.textContent = `"${quote.text}"`;
+        quoteBarAuthor.textContent = `— ${quote.author}`;
+      }
+    }
+
+    function changeQuote() {
+      // Get a random quote
+      const randomIndex = Math.floor(Math.random() * motivationalQuotes.length);
+      const quote = motivationalQuotes[randomIndex];
+      
+      // Update the quote display with animation
+      const quoteBarText = document.getElementById('quoteTextBar');
+      const quoteBarAuthor = document.getElementById('quoteAuthorBar');
+      
+      if (quoteBarText && quoteBarAuthor) {
+        // Fade out
+        quoteBarText.style.opacity = '0';
+        quoteBarAuthor.style.opacity = '0';
+        
+        setTimeout(() => {
+          quoteBarText.textContent = `"${quote.text}"`;
+          quoteBarAuthor.textContent = `— ${quote.author}`;
+          
+          // Fade in
+          quoteBarText.style.transition = 'opacity 0.5s ease';
+          quoteBarAuthor.style.transition = 'opacity 0.5s ease';
+          quoteBarText.style.opacity = '1';
+          quoteBarAuthor.style.opacity = '1';
+        }, 300);
+      }
+      
+      // Play a success sound for feedback
+      playClick();
+      showToast('New quote loaded! 💡', 'success');
+    }
+
+    function updateDateTime() {
+      // Germany timezone (Europe/Berlin)
+      const options = {
+        timeZone: 'Europe/Berlin',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        weekday: 'long'
+      };
+      
+      const timeOptions = {
+        timeZone: 'Europe/Berlin',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+      };
+      
+      const now = new Date();
+      const dateString = now.toLocaleDateString('en-US', options);
+      const timeString = now.toLocaleTimeString('en-US', timeOptions);
+      
+      document.getElementById('currentDate').textContent = dateString;
+      document.getElementById('currentTime').textContent = timeString;
+    }
+
+    // ==================== Initialization ====================
+    function init() {
+      // Initialize DOM elements
+      canvas = document.getElementById("wheel");
+      if (!canvas) {
+        alert('ERROR: Canvas element not found!');
+        return;
+      }
+      
+      ctx = canvas.getContext("2d");
+      resultDiv = document.getElementById("result");
+      timerDiv = document.getElementById("timer");
+      checkboxesDiv = document.getElementById("namesCheckboxes");
+      
+      loadFromLocalStorage();
+      createCheckboxes();
+      updateParticipantsTimes();
+      setupKeyboardShortcuts();
+      setupSettingsToggle();
+      
+      // Draw initial wheel
+      drawWheel();
+      
+      // Initialize quote and datetime
+      updateQuoteOfTheDay();
+      updateDateTime();
+      // Update time every second (for header if needed)
+      setInterval(updateDateTime, 1000);
+      setInterval(updateDateTime, 1000);
+      
+      // Load saved color theme - default is light
+      const savedColorTheme = localStorage.getItem('colorTheme') || 'light';
+      if (savedColorTheme === 'light') {
+        document.documentElement.removeAttribute('data-theme');
+      } else {
+        document.documentElement.setAttribute('data-theme', savedColorTheme);
+      }
+      const colorThemeSelect = document.getElementById('colorTheme');
+      if (colorThemeSelect) {
+        colorThemeSelect.value = savedColorTheme;
+      }
+      
+      // Load saved title
+      const savedTitle = localStorage.getItem('pageTitle');
+      if (savedTitle) {
+        const titleEl = document.getElementById('pageTitle');
+        if (titleEl) titleEl.textContent = savedTitle;
+      }
+      
+      // Load saved sound theme
+      const savedSoundTheme = localStorage.getItem('soundTheme') || 'classic';
+      soundTheme = savedSoundTheme;
+      const soundThemeEl = document.getElementById('soundTheme');
+      if (soundThemeEl) soundThemeEl.value = savedSoundTheme;
+    }
+
+    // ==================== Local Storage ====================
+    function loadFromLocalStorage() {
+      const saved = localStorage.getItem('speakersWheelData');
+      if (saved) {
+        const data = JSON.parse(saved);
+        allNames = data.allNames || allNames;
+        nameStates = data.nameStates || {};
+        selectedByWheel = new Set(data.selectedByWheel || []);
+        participantTimes = data.participantTimes || {};
+        stats = data.stats || stats;
+        settings = data.settings || settings;
+        
+        // Update settings UI
+        document.getElementById('spinDuration').value = settings.spinDuration;
+        document.getElementById('timerDuration').value = settings.timerDuration;
+        document.getElementById('wheelSpeed').value = settings.wheelSpeed;
+        updateSetting('spinDuration', settings.spinDuration);
+        updateSetting('timerDuration', settings.timerDuration);
+        updateSetting('wheelSpeed', settings.wheelSpeed);
+      } else {
+        // Initialize nameStates for default names
+        allNames.forEach(name => {
+          nameStates[name] = true;
+        });
+      }
+    }
+
+    function saveToLocalStorage() {
+      const data = {
+        allNames,
+        nameStates,
+        selectedByWheel: Array.from(selectedByWheel),
+        participantTimes,
+        stats,
+        settings
+      };
+      localStorage.setItem('speakersWheelData', JSON.stringify(data));
+    }
+
+    // ==================== Title Edit ====================
+    function editTitle() {
+      const titleElement = document.getElementById('pageTitle');
+      const currentTitle = titleElement.textContent;
+      
+      const newTitle = prompt('Enter new title (including emoji):', currentTitle);
+      if (newTitle !== null && newTitle.trim() !== '') {
+        titleElement.textContent = newTitle.trim();
+        localStorage.setItem('pageTitle', newTitle.trim());
+        showToast('Title updated!', 'success');
+      }
+    }
+
+    // ==================== Theme Toggle ====================
+    function toggleTheme() {
+      playClick();
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('colorTheme', newTheme);
+      
+      // Update dropdown
+      const colorThemeSelect = document.getElementById('colorTheme');
+      if (colorThemeSelect) {
+        colorThemeSelect.value = newTheme;
+      }
+      
+      showToast(newTheme === 'dark' ? '🌙 Dark Mode' : '☀️ Light Mode', 'success');
+      drawWheel(); // Redraw with new theme
+    }
+
+    function changeColorTheme(theme) {
+      playClick();
+      
+      // Set the theme attribute
+      if (theme === 'light') {
+        document.documentElement.removeAttribute('data-theme');
+      } else {
+        document.documentElement.setAttribute('data-theme', theme);
+      }
+      
+      // Save to localStorage
+      localStorage.setItem('colorTheme', theme);
+      
+      // Get theme name for toast message
+      const themeNames = {
+        'light': '☀️ Classic Light',
+        'dark': '🌙 Classic Dark',
+        'nature': '🌿 Nature Light',
+        'nature-dark': '🌲 Nature Dark',
+        'christmas': '🎄 Christmas Light',
+        'christmas-dark': '🎅 Christmas Dark',
+        'ocean': '🌊 Ocean Light',
+        'ocean-dark': '🌊 Ocean Dark',
+        'sunset': '🌅 Sunset Light',
+        'sunset-dark': '🌆 Sunset Dark',
+        'purple': '💜 Purple Light',
+        'purple-dark': '💜 Purple Dark'
+      };
+      
+      showToast(`Theme: ${themeNames[theme] || theme}`, 'success');
+      drawWheel(); // Redraw wheel with new colors
+    }
+
+    // ==================== Sound Toggle ====================
+    function toggleSound() {
+      playClick();
+      soundEnabled = !soundEnabled;
+      showToast(soundEnabled ? '🔊 Sound On' : '🔇 Sound Off', 'success');
+    }
+
+    // ==================== Toast Notifications ====================
+    function showToast(message, type = 'success') {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      toast.className = `toast ${type}`;
+      
+      const icon = type === 'success' ? '✓' : type === 'error' ? '✗' : '⚠';
+      toast.innerHTML = `<span style="font-size: 1.5em;">${icon}</span><span>${message}</span>`;
+      
+      container.appendChild(toast);
+      
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        setTimeout(() => toast.remove(), 300);
+      }, 3000);
+    }
+
+    // ==================== Names Management ====================
+    function createCheckboxes() {
+      checkboxesDiv.innerHTML = "";
+      allNames.forEach((name, idx) => {
+        const row = document.createElement("div");
+        row.className = "name-row";
+
+        const cb = document.createElement("input");
+        cb.type = "checkbox";
+        cb.checked = nameStates[name] !== undefined ? nameStates[name] : true;
+        cb.onchange = updateNames;
+
+        const input = document.createElement("input");
+        input.type = "text";
+        input.value = name;
+        const originalName = name;
+        input.oninput = () => {
+          const newName = input.value.trim() || "Unnamed";
+          // Update nameStates with new name
+          if (originalName !== newName) {
+            nameStates[newName] = nameStates[originalName];
+            delete nameStates[originalName];
+          }
+          allNames[idx] = newName;
+          updateNames();
+          saveToLocalStorage();
+        };
+
+        const delBtn = document.createElement("button");
+        delBtn.textContent = "🗑️";
+        delBtn.className = "delete-btn";
+        delBtn.onclick = () => {
+          delete nameStates[name];
+          selectedByWheel.delete(name); // Remove from selected list
+          allNames.splice(idx, 1);
+          createCheckboxes();
+          updateNames();
+          saveToLocalStorage();
+          showToast('Participant deleted', 'success');
+        };
+
+        row.appendChild(cb);
+        row.appendChild(input);
+        row.appendChild(delBtn);
+        checkboxesDiv.appendChild(row);
+      });
+      updateNames();
+    }
+
+    function addName() {
+      const newName = "";
+      allNames.push(newName);
+      nameStates[newName] = true;
+      createCheckboxes();
+      saveToLocalStorage();
+      playSuccess();
+      showToast('New participant added', 'success');
+    }
+
+    // Fisher-Yates shuffle for truly random ordering
+    function shuffleArray(arr) {
+      const shuffled = [...arr];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled;
+    }
+
+    function updateNames() {
+      const active = [];
+      const rows = document.querySelectorAll(".name-row");
+      rows.forEach((row, idx) => {
+        const cb = row.querySelector("input[type='checkbox']");
+        const input = row.querySelector("input[type='text']");
+        const name = input.value.trim();
+        
+        // Update nameStates
+        nameStates[name] = cb.checked;
+        
+        if (cb.checked && name !== "") {
+          active.push(name);
+          row.classList.remove('disabled');
+        } else {
+          row.classList.add('disabled');
+        }
+      });
+      // Shuffle names so wheel segments are randomly ordered each time
+      names = shuffleArray(active);
+      drawWheel();
+      updateStats();
+      saveToLocalStorage();
+    }
+
+    function resetNames() {
+      playClick();
+      
+      // Stop timer if running
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+        timerRunning = false;
+        timerOvertime = 0;
+        timerDiv.innerHTML = "";
+      }
+      
+      document.querySelectorAll(".name-row input[type='checkbox']").forEach(cb => cb.checked = true);
+      updateNames();
+      showToast('All participants enabled', 'success');
+    }
+
+    function disableAllNames() {
+      playClick();
+      document.querySelectorAll(".name-row input[type='checkbox']").forEach(cb => cb.checked = false);
+      updateNames();
+      showToast('All participants disabled', 'warning');
+    }
+
+    function loadDefaultTeam() {
+      playClick();
+      allNames = [
+        'Andreas', 'Aram', 'Dustin', 'Jennifer', 'Kim', 'Kusay',
+        'Lea', 'Lena', 'Leonie', 'Lukas',
+        'Marcel', 'Mareen', 'Marina', 'Matilda', 'Matteo', 'Matthias', 'Melanie', 'Mirle',
+        'Robert', 'Roel',
+        'Sabine', 'Sattar', 'Savas',
+        'Veronika'
+      ];
+      nameStates = {};
+      selectedByWheel.clear();
+      allNames.forEach(n => nameStates[n] = true);
+      createCheckboxes();
+      updateNames();
+      saveToLocalStorage();
+      showToast('Default team loaded', 'success');
+    }
+
+    function clearAll() {
+      if (confirm('Are you sure you want to delete all participants?')) {
+        playClick();
+        allNames = [];
+        nameStates = {};
+        selectedByWheel.clear();
+        createCheckboxes();
+        updateNames();
+        saveToLocalStorage();
+        showToast('All participants cleared', 'warning');
+      }
+    }
+
+    function saveNames() {
+      playClick();
+      const text = allNames.join("\n");
+      const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "speakers-list.txt";
+      link.click();
+      showToast('List saved', 'success');
+    }
+
+    function loadNames(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        allNames = e.target.result.split(/\r?\n/).filter(n => n.trim() !== "");
+        createCheckboxes();
+        showToast(`Loaded ${allNames.length} participants`, 'success');
+      };
+      reader.readAsText(file);
+    }
+
+    // ==================== Wheel Drawing ====================
+    function drawWheel() {
+      if (!ctx) {
+        return; // Context not ready yet
+      }
+      
+      if(names.length === 0) {
+        ctx.clearRect(0, 0, 600, 600);
+        ctx.fillStyle = getComputedStyle(document.documentElement)
+          .getPropertyValue('--text-color');
+        ctx.font = "16px Arial";
+        ctx.textAlign = "center";
+        ctx.fillText("Please select participants ♥", 300, 300);
+        return;
+      }
+
+      const outsideRadius = 260;
+      const insideRadius = 65;
+      const arc = Math.PI * 2 / names.length;
+
+      ctx.clearRect(0, 0, 600, 600);
+
+      for(let i = 0; i < names.length; i++) {
+        const angle = startAngle + i * arc;
+        ctx.fillStyle = getWheelColor(i);
+        ctx.beginPath();
+        ctx.arc(300, 300, outsideRadius, angle, angle + arc, false);
+        ctx.arc(300, 300, insideRadius, angle + arc, angle, true);
+        
+        // Draw the slice fill without stroke
+        ctx.fill();
+        
+        // Draw subtle separator lines
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)'; // Very transparent white
+        ctx.lineWidth = 1; // Thinner line
+        ctx.stroke();
+
+        // Draw names
+        ctx.save();
+        ctx.translate(300, 300);
+        ctx.rotate(angle + arc / 2);
+        ctx.fillStyle = "white";
+        ctx.font = "bold 18px Arial";
+        ctx.textAlign = "right"; // Changed from "left" to "right"
+        ctx.textBaseline = "middle";
+        ctx.shadowColor = "rgba(0,0,0,0.5)";
+        ctx.shadowBlur = 3;
+        // Position text near outer edge (outsideRadius - 10 pixels padding)
+        ctx.fillText(names[i], outsideRadius - 10, 0);
+        ctx.restore();
+      }
+
+      // Draw center circle
+      ctx.beginPath();
+      ctx.arc(300, 300, insideRadius, 0, Math.PI * 2);
+      
+      // Check if timer is in warning state (3 seconds or less) or overtime
+      if (timerRunning && (timerOvertime > 0 || (timerRemaining > 0 && timerRemaining <= 3))) {
+        // Calculate pulsing effect based on current time
+        const pulse = Math.sin(Date.now() / 150) * 0.5 + 0.5; // Oscillates between 0 and 1
+        const glowIntensity = 20 + pulse * 30; // Glow between 20 and 50
+        
+        // Red pulsing glow when time is running out
+        ctx.fillStyle = '#DC2626'; // Red color
+        
+        // Multiple layers of glow for intense effect
+        ctx.shadowColor = `rgba(239, 68, 68, ${0.8 + pulse * 0.2})`;
+        ctx.shadowBlur = glowIntensity;
+        ctx.fill();
+        
+        // Second layer - outer glow
+        ctx.shadowColor = `rgba(220, 38, 38, ${0.6 + pulse * 0.4})`;
+        ctx.shadowBlur = glowIntensity + 20;
+        ctx.fill();
+        
+        // Third layer - extreme outer glow
+        ctx.shadowColor = `rgba(255, 0, 0, ${0.3 + pulse * 0.3})`;
+        ctx.shadowBlur = glowIntensity + 40;
+        ctx.fill();
+      } else {
+        // Normal state
+        ctx.fillStyle = getComputedStyle(document.documentElement)
+          .getPropertyValue('--primary-color');
+        ctx.shadowColor = 'transparent';
+        ctx.shadowBlur = 0;
+        ctx.fill();
+      }
+      
+      ctx.strokeStyle = "white";
+      ctx.lineWidth = 3;
+      ctx.stroke();
+
+      // Draw timer in center of wheel
+      if (timerRunning && timerRemaining > 0) {
+        ctx.save();
+        
+        // Change color to red if 3 seconds or less with pulsing effect
+        if (timerRemaining <= 3) {
+          const pulse = Math.sin(Date.now() / 150) * 0.5 + 0.5; // Same pulse as circle
+          const scale = 1 + pulse * 0.15; // Scale between 1 and 1.15
+          
+          ctx.fillStyle = "#FFFFFF"; // White for maximum contrast
+          ctx.shadowColor = "#DC2626"; // Red shadow
+          ctx.shadowBlur = 15 + pulse * 10; // Pulsing shadow
+          
+          // Apply scaling transformation
+          ctx.translate(300, 300);
+          ctx.scale(scale, scale);
+          ctx.translate(-300, -300);
+        } else {
+          ctx.fillStyle = "white";
+          ctx.shadowColor = "rgba(0,0,0,0.7)";
+          ctx.shadowBlur = 8;
+        }
+        
+        ctx.font = "bold 32px Arial";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        const minutes = Math.floor(timerRemaining / 60);
+        const seconds = timerRemaining % 60;
+        
+        // Draw time
+        ctx.fillText(`${minutes}:${seconds.toString().padStart(2, '0')}`, 300, 300);
+        ctx.restore();
+      } else if (timerRunning && timerOvertime > 0) {
+        // Draw overtime in red on wheel center
+        ctx.save();
+        const pulse = Math.sin(Date.now() / 300) * 0.5 + 0.5;
+        ctx.fillStyle = "#FFFFFF";
+        ctx.shadowColor = `rgba(239,68,68,${0.7 + pulse * 0.3})`;
+        ctx.shadowBlur = 12 + pulse * 10;
+        ctx.font = "bold 28px Arial";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        const ot_m = Math.floor(timerOvertime / 60);
+        const ot_s = timerOvertime % 60;
+        ctx.fillText(`+${ot_m}:${ot_s.toString().padStart(2, '0')}`, 300, 300);
+        ctx.restore();
+      }
+
+      // Calculate which segment the arrow is pointing at
+      const degrees = startAngle * 180 / Math.PI;
+      const arrowIndex = Math.floor((360 - degrees % 360) / (360 / names.length));
+      const arrowColor = getWheelColor(arrowIndex);
+
+      // Draw enhanced arrow (pointing left from the right side)
+      // Outer shadow/glow
+      ctx.shadowColor = arrowColor;
+      ctx.shadowBlur = 15;
+      ctx.shadowOffsetX = -3;
+      ctx.shadowOffsetY = 0;
+      
+      // Main arrow body
+      ctx.fillStyle = arrowColor;
+      ctx.beginPath();
+      ctx.moveTo(300 + (outsideRadius + 25), 300 - 15);
+      ctx.lineTo(300 + (outsideRadius + 25), 300 + 15);
+      ctx.lineTo(300 + (outsideRadius - 10), 300);
+      ctx.closePath();
+      ctx.fill();
+      
+      // Arrow border/outline
+      ctx.shadowColor = 'transparent';
+      ctx.shadowBlur = 0;
+      ctx.strokeStyle = "white";
+      ctx.lineWidth = 3;
+      ctx.stroke();
+      
+      // Inner highlight
+      ctx.fillStyle = "rgba(255, 255, 255, 0.3)";
+      ctx.beginPath();
+      ctx.moveTo(300 + (outsideRadius + 22), 300 - 10);
+      ctx.lineTo(300 + (outsideRadius + 22), 300 + 10);
+      ctx.lineTo(300 + (outsideRadius - 5), 300);
+      ctx.closePath();
+      ctx.fill();
+    }
+
+    function getWheelColor(i) {
+      // Get current theme
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+      
+      // Define color palettes for each theme
+      const themeColors = {
+        'light': [
+          '#0A2463', '#1E3A8A', '#2563EB', '#3B82F6',
+          '#60A5FA', '#93C5FD', '#BFDBFE', '#DBEAFE',
+          '#1D4ED8', '#2196F3', '#03A9F4', '#00BCD4',
+          '#0EA5E9', '#38BDF8', '#7DD3FC', '#A5F3FC'
+        ],
+        'dark': [
+          '#1e40af', '#2563eb', '#3b82f6', '#60a5fa',
+          '#93c5fd', '#1e3a8a', '#1d4ed8', '#2196f3',
+          '#5ba3ff', '#4a8cd6', '#357ab7', '#2196f3',
+          '#03a9f4', '#00bcd4', '#0ea5e9', '#38bdf8'
+        ],
+        'nature': [
+          '#166534', '#16a34a', '#22c55e', '#4ade80',
+          '#86efac', '#bbf7d0', '#14532d', '#15803d',
+          '#2ecc71', '#27ae60', '#1abc9c', '#16a085',
+          '#48bb78', '#68d391', '#9ae6b4', '#c6f6d5'
+        ],
+        'nature-dark': [
+          '#15803d', '#16a34a', '#22c55e', '#4ade80',
+          '#86efac', '#2ecc71', '#27ae60', '#52b788',
+          '#74c69d', '#95d5b2', '#b7e4c7', '#d8f3dc',
+          '#1b4332', '#2d6a4f', '#40916c', '#52b788'
+        ],
+        'christmas': [
+          '#991b1b', '#dc2626', '#ef4444', '#f87171',
+          '#14532d', '#166534', '#16a34a', '#22c55e',
+          '#c41e3a', '#165b33', '#b91c1c', '#15803d',
+          '#fca5a5', '#86efac', '#fbbf24', '#fef3c7'
+        ],
+        'christmas-dark': [
+          '#dc2626', '#ef4444', '#f87171', '#fca5a5',
+          '#16a34a', '#22c55e', '#4ade80', '#86efac',
+          '#ff4757', '#2ed573', '#ff6b81', '#5f27cd',
+          '#ffa502', '#feca57', '#ff6348', '#ff4757'
+        ],
+        'ocean': [
+          '#0c4a6e', '#075985', '#0369a1', '#0284c7',
+          '#0ea5e9', '#38bdf8', '#7dd3fc', '#bae6fd',
+          '#0891b2', '#06b6d4', '#22d3ee', '#67e8f9',
+          '#1e3a8a', '#1e40af', '#2563eb', '#3b82f6'
+        ],
+        'ocean-dark': [
+          '#0369a1', '#0284c7', '#0ea5e9', '#38bdf8',
+          '#7dd3fc', '#075985', '#0891b2', '#06b6d4',
+          '#3498db', '#2980b9', '#5dade2', '#85c1e2',
+          '#22d3ee', '#67e8f9', '#a5f3fc', '#cffafe'
+        ],
+        'sunset': [
+          '#9a3412', '#c2410c', '#ea580c', '#f97316',
+          '#fb923c', '#fdba74', '#fed7aa', '#ffedd5',
+          '#ca8a04', '#eab308', '#facc15', '#fde047',
+          '#f59e0b', '#fbbf24', '#fcd34d', '#fde68a'
+        ],
+        'sunset-dark': [
+          '#ea580c', '#f97316', '#fb923c', '#fdba74',
+          '#eab308', '#facc15', '#fde047', '#fef08a',
+          '#f39c12', '#e67e22', '#f0b27a', '#f8c471',
+          '#d68910', '#e59866', '#eb984e', '#dc7633'
+        ],
+        'purple': [
+          '#6b21a8', '#7e22ce', '#9333ea', '#a855f7',
+          '#c084fc', '#d8b4fe', '#e9d5ff', '#f3e8ff',
+          '#7c3aed', '#8b5cf6', '#a78bfa', '#c4b5fd',
+          '#581c87', '#6b21a8', '#7e22ce', '#9333ea'
+        ],
+        'purple-dark': [
+          '#7e22ce', '#9333ea', '#a855f7', '#c084fc',
+          '#d8b4fe', '#9b59b6', '#8e44ad', '#bb8fce',
+          '#a569bd', '#8e44ad', '#7d3c98', '#6c3483',
+          '#5b2c6f', '#4a235a', '#9b59b6', '#a569bd'
+        ]
+      };
+      
+      // Get colors for current theme, fallback to light theme
+      const colors = themeColors[currentTheme] || themeColors['light'];
+      return colors[i % colors.length];
+    }
+
+    // ==================== Wheel Spinning ====================
+    function rotateWheel() {
+      if (!ctx) {
+        return; // Context not ready yet
+      }
+      
+      spinTime += 30;
+      if(spinTime >= spinTimeTotal) {
+        stopRotateWheel();
+        return;
+      }
+      // Calculate how much of the total angle has been completed
+      const progress = easeOut(spinTime, 0, spinAngleStart, spinTimeTotal);
+      const currentAngle = progress * Math.PI / 180;
+      
+      // Calculate rotation increment (difference from last frame)
+      const rotationIncrement = currentAngle - (lastRotation || 0);
+      lastRotation = currentAngle;
+      
+      startAngle += rotationIncrement;
+      drawWheel();
+      spinTimeout = setTimeout(rotateWheel, 30);
+    }
+
+    function stopRotateWheel() {
+      clearTimeout(spinTimeout);
+      
+      const arc = Math.PI * 2 / names.length;
+      // Changed calculation to select at right side (0 degrees) instead of top (90 degrees)
+      const degrees = startAngle * 180 / Math.PI;
+      const index = Math.floor((360 - degrees % 360) / (360 / names.length));
+      const chosen = names[index];
+      
+      isSpinning = false;
+      
+      // Display result with control buttons
+      resultDiv.innerHTML = `
+        <div class="result-name">🎉 <strong>${chosen}</strong></div>
+        <div class="result-controls">
+          <button onclick="pauseTimer()" id="pauseBtnResult" class="pause-btn">⏸️ Pause</button>
+          <button onclick="resumeTimer()" id="resumeBtnResult" class="resume-btn" style="display: none;">▶️ Resume</button>
+          <button onclick="stopTimer()" id="stopBtnResult" class="stop-btn">⏹️ Stop</button>
+        </div>
+      `;
+      
+      // Update statistics
+      stats.totalSpins++;
+      stats.picks[chosen] = (stats.picks[chosen] || 0) + 1;
+      
+      // Start tracking time for this participant
+      currentParticipant = chosen;
+      speakingStartTime = Date.now();
+      
+      // Initialize participant time if not exists
+      if (!participantTimes[chosen]) {
+        participantTimes[chosen] = 0;
+      }
+      
+      // Store the chosen person to disable on next spin
+      lastSelectedPerson = chosen;
+
+      updateParticipantsTimes();
+      saveToLocalStorage();
+      
+      // Effects
+      playDing();
+      startTimer(settings.timerDuration);
+      
+      showToast(`Selected: ${chosen}`, 'success');
+    }
+
+    function easeOut(t, b, c, d) {
+      const ts = (t/=d)*t;
+      const tc = ts*t;
+      return b+c*(tc + -3*ts + 3*t);
+    }
+
+    function startSpin() {
+      if(names.length === 0) {
+        showToast('Please select participants first!', 'error');
+        playError();
+        return;
+      }
+      
+      if(isSpinning) {
+        showToast('Wheel is already spinning!', 'warning');
+        playError();
+        return;
+      }
+      
+      // Play click sound when wheel is clicked
+      playClick();
+      
+      // Disable the last selected person before starting new spin
+      if (lastSelectedPerson) {
+        document.querySelectorAll(".name-row").forEach(row => {
+          const input = row.querySelector("input[type='text']").value.trim();
+          const cb = row.querySelector("input[type='checkbox']");
+          if (input === lastSelectedPerson) {
+            cb.checked = false;
+            nameStates[lastSelectedPerson] = false;
+            selectedByWheel.add(lastSelectedPerson); // Mark as selected by wheel
+          }
+        });
+        lastSelectedPerson = null; // Reset after disabling
+        updateNames();
+        updateStats();
+        
+        // Check if this was the last participant
+        if (names.length === 0) {
+          showToast('🎉 All participants have been selected!', 'success');
+          playSuccess();
+          resultDiv.innerHTML = "✅ All Done!";
+          
+          // Auto-reset after showing completion message
+          setTimeout(() => {
+            resetNames();
+            resultDiv.innerHTML = "";
+            showToast('Participants reset - ready for next round!', 'success');
+          }, 2000);
+          return;
+        }
+      }
+      
+      // Save time for previous participant before starting new spin
+      if (currentParticipant && speakingStartTime) {
+        const elapsed = Math.floor((Date.now() - speakingStartTime) / 1000);
+        participantTimes[currentParticipant] = (participantTimes[currentParticipant] || 0) + elapsed;
+        stats.totalTime += elapsed;
+        currentParticipant = null;
+        speakingStartTime = null;
+        updateParticipantsTimes();
+        updateStats();
+        saveToLocalStorage();
+      }
+      
+      isSpinning = true;
+      
+      // Stop and reset timer
+      if(timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+      }
+      timerOvertime = 0;
+      
+      resultDiv.innerHTML = "🎲 Selecting...";
+      timerDiv.innerHTML = "";
+      document.getElementById('pauseBtn').style.display = 'none';
+      document.getElementById('resumeBtn').style.display = 'none';
+      document.getElementById('stopBtn').style.display = 'none';
+      
+      // spinDuration controls how long the wheel spins
+      spinTimeTotal = settings.spinDuration * 1000;
+      // wheelSpeed controls rotation speed with exponential effect for more noticeable difference
+      // wheelSpeed 1 = 360-720 degrees (1-2 rotations)
+      // wheelSpeed 5 = 1800-3600 degrees (5-10 rotations)  
+      // wheelSpeed 10 = 7200-14400 degrees (20-40 rotations)
+      spinAngleStart = (Math.random() * 360 + 360) * Math.pow(settings.wheelSpeed, 1.5);
+      
+      console.log('Wheel Speed Setting:', settings.wheelSpeed);
+      console.log('Spin Angle Start:', spinAngleStart);
+      console.log('Spin Time Total:', spinTimeTotal);
+      
+      spinTime = 0;
+      lastRotation = 0;
+      rotateWheel();
+      
+      if (soundEnabled) playSpinSound();
+    }
+
+    // ==================== Timer Functions ====================
+    function startTimer(seconds) {
+      timerRemaining = seconds;
+      timerOvertime = 0;
+      timerRunning = true;
+      timerPaused = false;
+      updateTimerDisplay();
+      
+      document.getElementById('pauseBtn').style.display = 'inline-block';
+      document.getElementById('stopBtn').style.display = 'inline-block';
+      
+      timerInterval = setInterval(() => {
+        if (!timerPaused) {
+          timerRemaining--;
+          updateTimerDisplay();
+
+          if (timerRemaining <= 3 && timerRemaining > 0) {
+            playTick();
+            timerDiv.classList.add('warning');
+          }
+
+          if(timerRemaining <= 0) {
+            // First moment time hits zero: fire alarm and update UI once
+            if (timerOvertime === 0) {
+              stopPulseAnimation();
+              timerDiv.classList.remove('warning');
+
+              // Hide all timer control buttons (both old and new)
+              const pauseBtn = document.getElementById('pauseBtn');
+              const resumeBtn = document.getElementById('resumeBtn');
+              const stopBtn = document.getElementById('stopBtn');
+              const pauseBtnResult = document.getElementById('pauseBtnResult');
+              const resumeBtnResult = document.getElementById('resumeBtnResult');
+              const stopBtnResult = document.getElementById('stopBtnResult');
+
+              if (pauseBtn) pauseBtn.style.display = 'none';
+              if (resumeBtn) resumeBtn.style.display = 'none';
+              if (stopBtn) stopBtn.style.display = 'inline-block'; // keep Stop visible
+              if (pauseBtnResult) pauseBtnResult.style.display = 'none';
+              if (resumeBtnResult) resumeBtnResult.style.display = 'none';
+              if (stopBtnResult) stopBtnResult.style.display = 'inline-block';
+
+              // Hide result controls container to center the name
+              const resultControls = document.querySelector('.result-controls');
+              if (resultControls) resultControls.classList.add('hidden');
+
+              // Update result div
+              if (currentParticipant) {
+                resultDiv.innerHTML = `<div class="result-name">⏰ Time's Up dear <strong>${currentParticipant}</strong> 🎯</div>`;
+              }
+
+              playAlarm();
+
+              // Check if this was the last participant (only 1 left means this was the last)
+              if (names.length === 1 && lastSelectedPerson) {
+                setTimeout(() => {
+                  resultDiv.innerHTML = "✅ All Done!";
+                  playSuccess();
+                  showToast('🎉 All participants completed!', 'success');
+                  drawWheel(); // Clear the wheel
+                  
+                  // Reset all participants automatically after 2 seconds
+                  setTimeout(() => {
+                    resetNames();
+                    resultDiv.innerHTML = "";
+                    showToast('Participants reset - ready for next round!', 'success');
+                  }, 2000);
+                }, 1000);
+              }
+            }
+
+            // Continue counting overtime
+            timerOvertime++;
+            const ot_m = Math.floor(timerOvertime / 60);
+            const ot_s = timerOvertime % 60;
+            timerDiv.innerHTML = `<span style="color:#ef4444;font-weight:bold;">+${ot_m}:${ot_s.toString().padStart(2,'0')} ⏰</span>`;
+          }
+        }
+      }, 1000);
+    }
+
+    function updateTimerDisplay() {
+      const minutes = Math.floor(timerRemaining / 60);
+      const seconds = timerRemaining % 60;
+      timerDiv.innerHTML = `🕒 ${minutes}:${seconds.toString().padStart(2, '0')}`;
+      // Redraw wheel to update timer in center
+      drawWheel();
+      
+      // Start pulsing animation when in warning state
+      if (timerRemaining <= 3 && timerRemaining > 0 && !pulseAnimationId) {
+        startPulseAnimation();
+      } else if (timerRemaining > 3 && pulseAnimationId) {
+        stopPulseAnimation();
+      }
+    }
+
+    function startPulseAnimation() {
+      // Continuous redraw for pulsing effect
+      function animate() {
+        drawWheel();
+        pulseAnimationId = requestAnimationFrame(animate);
+      }
+      animate();
+    }
+
+    function stopPulseAnimation() {
+      if (pulseAnimationId) {
+        cancelAnimationFrame(pulseAnimationId);
+        pulseAnimationId = null;
+        drawWheel(); // Final redraw
+      }
+    }
+
+    function pauseTimer() {
+      playClick();
+      timerPaused = true;
+      
+      // Update both old and new buttons
+      const oldPauseBtn = document.getElementById('pauseBtn');
+      const oldResumeBtn = document.getElementById('resumeBtn');
+      const newPauseBtn = document.getElementById('pauseBtnResult');
+      const newResumeBtn = document.getElementById('resumeBtnResult');
+      
+      if (oldPauseBtn) oldPauseBtn.style.display = 'none';
+      if (oldResumeBtn) oldResumeBtn.style.display = 'inline-block';
+      if (newPauseBtn) newPauseBtn.style.display = 'none';
+      if (newResumeBtn) newResumeBtn.style.display = 'inline-block';
+      
+      showToast('Timer paused', 'warning');
+    }
+
+    function resumeTimer() {
+      playClick();
+      timerPaused = false;
+      
+      // Update both old and new buttons
+      const oldPauseBtn = document.getElementById('pauseBtn');
+      const oldResumeBtn = document.getElementById('resumeBtn');
+      const newPauseBtn = document.getElementById('pauseBtnResult');
+      const newResumeBtn = document.getElementById('resumeBtnResult');
+      
+      if (oldPauseBtn) oldPauseBtn.style.display = 'inline-block';
+      if (oldResumeBtn) oldResumeBtn.style.display = 'none';
+      if (newPauseBtn) newPauseBtn.style.display = 'inline-block';
+      if (newResumeBtn) newResumeBtn.style.display = 'none';
+      
+      showToast('Timer resumed', 'success');
+    }
+
+    function stopTimer() {
+      playClick();
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+      }
+      timerRunning = false;
+      timerOvertime = 0;
+      stopPulseAnimation(); // Stop the pulsing animation
+      timerDiv.innerHTML = "";
+      resultDiv.innerHTML = ""; // Clear the result display
+      
+      // Hide all timer buttons (both old and new)
+      const oldPauseBtn = document.getElementById('pauseBtn');
+      const oldResumeBtn = document.getElementById('resumeBtn');
+      const oldStopBtn = document.getElementById('stopBtn');
+      
+      if (oldPauseBtn) oldPauseBtn.style.display = 'none';
+      if (oldResumeBtn) oldResumeBtn.style.display = 'none';
+      if (oldStopBtn) oldStopBtn.style.display = 'none';
+      
+      timerDiv.classList.remove('warning');
+      
+      // Redraw wheel to remove timer from center
+      drawWheel();
+      
+      // Save elapsed time when timer is manually stopped
+      if (currentParticipant && speakingStartTime) {
+        const elapsed = Math.floor((Date.now() - speakingStartTime) / 1000);
+        participantTimes[currentParticipant] += elapsed;
+        stats.totalTime += elapsed;
+        currentParticipant = null;
+        speakingStartTime = null;
+        updateStats();
+        updateParticipantsTimes();
+        saveToLocalStorage();
+      }
+      
+      showToast('Timer stopped', 'warning');
+    }
+
+    // ==================== Statistics ====================
+    function updateStats() {
+      document.getElementById('remainingCount').textContent = names.length;
+      
+      // Count only those selected by wheel and still exist in allNames
+      let selectedCount = 0;
+      selectedByWheel.forEach(name => {
+        if (allNames.includes(name)) {
+          selectedCount++;
+        }
+      });
+      document.getElementById('selectedCount').textContent = selectedCount;
+      
+      // Update total time
+      const minutes = Math.floor(stats.totalTime / 60);
+      const seconds = stats.totalTime % 60;
+      document.getElementById('totalTime').textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+    }
+
+    function updateParticipantsTimes() {
+      const timeList = document.getElementById('participantsTime');
+      timeList.innerHTML = '';
+      
+      if (Object.keys(participantTimes).length === 0) {
+        timeList.innerHTML = '<p style="text-align: center; opacity: 0.6;">No speaking time recorded</p>';
+        return;
+      }
+      
+      // Order by wheel selection order (insertion order of selectedByWheel Set)
+      const wheelOrder = Array.from(selectedByWheel).filter(n => participantTimes[n] !== undefined);
+      const remaining = Object.keys(participantTimes).filter(n => !selectedByWheel.has(n));
+      const sorted = [...wheelOrder, ...remaining].map(n => [n, participantTimes[n]]);
+
+      sorted.forEach(([name, seconds]) => {
+        const minutes = Math.floor(seconds / 60);
+        const secs = seconds % 60;
+        const timeStr = `${minutes}:${secs.toString().padStart(2, '0')}`;
+        
+        const div = document.createElement('div');
+        div.className = 'stat-item';
+        div.innerHTML = `
+          <span class="stat-label">${name}:</span>
+          <span class="stat-value">${timeStr}</span>
+        `;
+        timeList.appendChild(div);
+      });
+    }
+
+    function resetStats() {
+      if (confirm('Are you sure you want to reset all statistics?')) {
+        playSuccess();
+        stats.totalSpins = 0;
+        stats.totalTime = 0;
+        stats.picks = {};
+        participantTimes = {};
+        selectedByWheel.clear();
+        currentParticipant = null;
+        speakingStartTime = null;
+        
+        updateStats();
+        updateParticipantsTimes();
+        saveToLocalStorage();
+        showToast('Statistics reset successfully', 'success');
+      }
+    }
+
+    // ==================== Settings ====================
+    function updateSetting(setting, value) {
+      playClick();
+      settings[setting] = parseFloat(value);
+      document.getElementById(setting + 'Value').textContent = value;
+      saveToLocalStorage();
+    }
+
+    function updateSoundTheme(theme) {
+      soundTheme = theme;
+      localStorage.setItem('soundTheme', theme);
+      showToast(`Sound theme: ${theme}`, 'success');
+      // Play a sample sound
+      playDing();
+    }
+
+    function resetSettings() {
+      playSuccess();
+      settings = {
+        spinDuration: 3,
+        timerDuration: 90,
+        wheelSpeed: 5
+      };
+      
+      document.getElementById('spinDuration').value = 3;
+      document.getElementById('timerDuration').value = 90;
+      document.getElementById('wheelSpeed').value = 5;
+      document.getElementById('soundTheme').value = 'classic';
+      updateSetting('spinDuration', 3);
+      updateSetting('timerDuration', 90);
+      updateSetting('wheelSpeed', 5);
+      updateSoundTheme('classic');
+      
+      showToast('Settings reset to defaults', 'success');
+    }
+
+    // ==================== Settings Toggle Scroll ====================
+    function setupSettingsToggle() {
+      const settingsDetails = document.querySelector('.settings-card details');
+      const rightSidebar = document.querySelector('.right-sidebar');
+      
+      if (settingsDetails && rightSidebar) {
+        settingsDetails.addEventListener('toggle', function() {
+          if (this.open) {
+            // Scroll to bottom when opened
+            setTimeout(() => {
+              rightSidebar.scrollTo({
+                top: rightSidebar.scrollHeight,
+                behavior: 'smooth'
+              });
+            }, 100);
+          } else {
+            // Scroll to top when closed
+            rightSidebar.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+            });
+          }
+        });
+      }
+    }
+
+    // ==================== Sound Effects ====================
+    // ==================== Sound Functions ====================
+    function playSound(type) {
+      if (!soundEnabled) return;
+      playThemeSound(type, soundTheme);
+    }
+
+    function playThemeSound(type, theme) {
+      const ctxAudio = new (window.AudioContext || window.webkitAudioContext)();
+      
+      // Theme-specific sound profiles
+      if (theme === 'classic') {
+        playClassicSound(type, ctxAudio);
+      } else if (theme === 'nature') {
+        playNatureSound(type, ctxAudio);
+      } else if (theme === 'bell') {
+        playBellSound(type, ctxAudio);
+      } else if (theme === 'christmas') {
+        playChristmasSound(type, ctxAudio);
+      }
+    }
+
+    function playClassicSound(type, ctx) {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      
+      switch(type) {
+        case 'tick':
+          osc.type = "square";
+          osc.frequency.value = 1000;
+          gain.gain.setValueAtTime(0.1, ctx.currentTime);
+          osc.start();
+          osc.stop(ctx.currentTime + 0.1);
+          break;
+        case 'ding':
+          osc.type = "sine";
+          osc.frequency.setValueAtTime(880, ctx.currentTime);
+          osc.frequency.exponentialRampToValueAtTime(440, ctx.currentTime + 0.3);
+          gain.gain.setValueAtTime(0.3, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.3);
+          osc.start();
+          osc.stop(ctx.currentTime + 0.3);
+          break;
+        case 'spin':
+          osc.type = "sawtooth";
+          osc.frequency.setValueAtTime(200, ctx.currentTime);
+          osc.frequency.exponentialRampToValueAtTime(100, ctx.currentTime + 0.5);
+          gain.gain.setValueAtTime(0.2, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.5);
+          osc.start();
+          osc.stop(ctx.currentTime + 0.5);
+          break;
+        case 'alarm':
+          for (let i = 0; i < 3; i++) {
+            const oscAlarm = ctx.createOscillator();
+            const gainAlarm = ctx.createGain();
+            oscAlarm.connect(gainAlarm);
+            gainAlarm.connect(ctx.destination);
+            oscAlarm.type = "sine";
+            oscAlarm.frequency.value = 800;
+            gainAlarm.gain.setValueAtTime(0.2, ctx.currentTime + i * 0.3);
+            gainAlarm.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + i * 0.3 + 0.2);
+            oscAlarm.start(ctx.currentTime + i * 0.3);
+            oscAlarm.stop(ctx.currentTime + i * 0.3 + 0.2);
+          }
+          break;
+        case 'click':
+          osc.type = "square";
+          osc.frequency.value = 800;
+          gain.gain.setValueAtTime(0.05, ctx.currentTime);
+          osc.start();
+          osc.stop(ctx.currentTime + 0.05);
+          break;
+        case 'success':
+          osc.type = "sine";
+          osc.frequency.setValueAtTime(523, ctx.currentTime);
+          osc.frequency.setValueAtTime(659, ctx.currentTime + 0.1);
+          osc.frequency.setValueAtTime(784, ctx.currentTime + 0.2);
+          gain.gain.setValueAtTime(0.2, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.4);
+          osc.start();
+          osc.stop(ctx.currentTime + 0.4);
+          break;
+        case 'error':
+          osc.type = "sawtooth";
+          osc.frequency.value = 200;
+          gain.gain.setValueAtTime(0.15, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.3);
+          osc.start();
+          osc.stop(ctx.currentTime + 0.3);
+          break;
+      }
+    }
+
+    function playNatureSound(type, ctx) {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      
+      switch(type) {
+        case 'tick':
+          // Wood tap - low frequency short burst
+          osc.type = "sine";
+          osc.frequency.value = 150;
+          gain.gain.setValueAtTime(0.15, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.08);
+          osc.start();
+          osc.stop(ctx.currentTime + 0.08);
+          break;
+        case 'ding':
+          // Bird chirp - high frequency warble
+          osc.type = "sine";
+          osc.frequency.setValueAtTime(2000, ctx.currentTime);
+          osc.frequency.exponentialRampToValueAtTime(2500, ctx.currentTime + 0.05);
+          osc.frequency.exponentialRampToValueAtTime(2200, ctx.currentTime + 0.1);
+          gain.gain.setValueAtTime(0.2, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.15);
+          osc.start();
+          osc.stop(ctx.currentTime + 0.15);
+          break;
+        case 'spin':
+          // Wind swoosh - sweeping low to high
+          osc.type = "sine";
+          osc.frequency.setValueAtTime(100, ctx.currentTime);
+          osc.frequency.exponentialRampToValueAtTime(800, ctx.currentTime + 0.4);
+          gain.gain.setValueAtTime(0.1, ctx.currentTime);
+          gain.gain.setValueAtTime(0.2, ctx.currentTime + 0.2);
+          gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.4);
+          osc.start();
+          osc.stop(ctx.currentTime + 0.4);
+          break;
+        case 'alarm':
+          // Double bird chirp
+          for (let i = 0; i < 2; i++) {
+            const oscBird = ctx.createOscillator();
+            const gainBird = ctx.createGain();
+            oscBird.connect(gainBird);
+            gainBird.connect(ctx.destination);
+            oscBird.type = "sine";
+            oscBird.frequency.setValueAtTime(2200, ctx.currentTime + i * 0.15);
+            oscBird.frequency.exponentialRampToValueAtTime(2800, ctx.currentTime + i * 0.15 + 0.08);
+            gainBird.gain.setValueAtTime(0.2, ctx.currentTime + i * 0.15);
+            gainBird.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + i * 0.15 + 0.1);
+            oscBird.start(ctx.currentTime + i * 0.15);
+            oscBird.stop(ctx.currentTime + i * 0.15 + 0.1);
+          }
+          break;
+        case 'click':
+          // Wood click
+          osc.type = "sine";
+          osc.frequency.value = 180;
+          gain.gain.setValueAtTime(0.12, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.06);
+          osc.start();
+          osc.stop(ctx.currentTime + 0.06);
+          break;
+        case 'success':
+          // Wind chime - harmonic tones
+          [880, 1100, 1320].forEach((freq, i) => {
+            const oscChime = ctx.createOscillator();
+            const gainChime = ctx.createGain();
+            oscChime.connect(gainChime);
+            gainChime.connect(ctx.destination);
+            oscChime.type = "sine";
+            oscChime.frequency.value = freq;
+            gainChime.gain.setValueAtTime(0.15, ctx.currentTime + i * 0.08);
+            gainChime.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + i * 0.08 + 0.5);
+            oscChime.start(ctx.currentTime + i * 0.08);
+            oscChime.stop(ctx.currentTime + i * 0.08 + 0.5);
+          });
+          break;
+        case 'error':
+          // Wood thud - deep low frequency
+          osc.type = "sine";
+          osc.frequency.value = 80;
+          gain.gain.setValueAtTime(0.2, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.2);
+          osc.start();
+          osc.stop(ctx.currentTime + 0.2);
+          break;
+      }
+    }
+
+    function playBellSound(type, ctx) {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      
+      switch(type) {
+        case 'tick':
+          // Small bell - high pure tone
+          osc.type = "sine";
+          osc.frequency.value = 1200;
+          gain.gain.setValueAtTime(0.15, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.2);
+          osc.start();
+          osc.stop(ctx.currentTime + 0.2);
+          break;
+        case 'ding':
+          // Service bell - multiple harmonics
+          [1000, 2000, 3000].forEach((freq, i) => {
+            const oscBell = ctx.createOscillator();
+            const gainBell = ctx.createGain();
+            oscBell.connect(gainBell);
+            gainBell.connect(ctx.destination);
+            oscBell.type = "sine";
+            oscBell.frequency.value = freq;
+            gainBell.gain.setValueAtTime(0.2 / (i + 1), ctx.currentTime);
+            gainBell.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.5);
+            oscBell.start();
+            oscBell.stop(ctx.currentTime + 0.5);
+          });
+          break;
+        case 'spin':
+          // Bell ring swoosh - rising then falling
+          osc.type = "sine";
+          osc.frequency.setValueAtTime(800, ctx.currentTime);
+          osc.frequency.exponentialRampToValueAtTime(1200, ctx.currentTime + 0.2);
+          osc.frequency.exponentialRampToValueAtTime(600, ctx.currentTime + 0.5);
+          gain.gain.setValueAtTime(0.2, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.5);
+          osc.start();
+          osc.stop(ctx.currentTime + 0.5);
+          break;
+        case 'alarm':
+          // School bell - repeating tone
+          for (let i = 0; i < 4; i++) {
+            const oscSchool = ctx.createOscillator();
+            const gainSchool = ctx.createGain();
+            oscSchool.connect(gainSchool);
+            gainSchool.connect(ctx.destination);
+            oscSchool.type = "sine";
+            oscSchool.frequency.value = 900;
+            gainSchool.gain.setValueAtTime(0.2, ctx.currentTime + i * 0.2);
+            gainSchool.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + i * 0.2 + 0.15);
+            oscSchool.start(ctx.currentTime + i * 0.2);
+            oscSchool.stop(ctx.currentTime + i * 0.2 + 0.15);
+          }
+          break;
+        case 'click':
+          // Bell tap
+          osc.type = "sine";
+          osc.frequency.value = 1100;
+          gain.gain.setValueAtTime(0.1, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.1);
+          osc.start();
+          osc.stop(ctx.currentTime + 0.1);
+          break;
+        case 'success':
+          // Victory bell - ascending notes
+          [800, 1000, 1200, 1500].forEach((freq, i) => {
+            const oscVictory = ctx.createOscillator();
+            const gainVictory = ctx.createGain();
+            oscVictory.connect(gainVictory);
+            gainVictory.connect(ctx.destination);
+            oscVictory.type = "sine";
+            oscVictory.frequency.value = freq;
+            gainVictory.gain.setValueAtTime(0.18, ctx.currentTime + i * 0.1);
+            gainVictory.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + i * 0.1 + 0.4);
+            oscVictory.start(ctx.currentTime + i * 0.1);
+            oscVictory.stop(ctx.currentTime + i * 0.1 + 0.4);
+          });
+          break;
+        case 'error':
+          // Wrong bell - descending tone
+          osc.type = "sine";
+          osc.frequency.setValueAtTime(800, ctx.currentTime);
+          osc.frequency.exponentialRampToValueAtTime(400, ctx.currentTime + 0.3);
+          gain.gain.setValueAtTime(0.2, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.3);
+          osc.start();
+          osc.stop(ctx.currentTime + 0.3);
+          break;
+      }
+    }
+
+    function playChristmasSound(type, ctx) {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      
+      // Christmas-themed sounds with festive melodies
+      switch(type) {
+        case 'tick':
+          // Jingle bell tap - bright metallic sound
+          [1200, 1800].forEach((freq, i) => {
+            const oscJingle = ctx.createOscillator();
+            const gainJingle = ctx.createGain();
+            oscJingle.connect(gainJingle);
+            gainJingle.connect(ctx.destination);
+            oscJingle.type = "sine";
+            oscJingle.frequency.value = freq;
+            gainJingle.gain.setValueAtTime(0.12 / (i + 1), ctx.currentTime);
+            gainJingle.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.15);
+            oscJingle.start();
+            oscJingle.stop(ctx.currentTime + 0.15);
+          });
+          break;
+          
+        case 'ding':
+          // Festive chime - "Jingle Bells" inspired
+          const jingleBellsMelody = [659, 659, 659, 659, 659, 659, 659, 784, 523, 587, 659];
+          jingleBellsMelody.slice(0, 5).forEach((freq, i) => {
+            const oscChime = ctx.createOscillator();
+            const gainChime = ctx.createGain();
+            oscChime.connect(gainChime);
+            gainChime.connect(ctx.destination);
+            oscChime.type = "sine";
+            oscChime.frequency.value = freq;
+            gainChime.gain.setValueAtTime(0.2, ctx.currentTime + i * 0.12);
+            gainChime.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + i * 0.12 + 0.3);
+            oscChime.start(ctx.currentTime + i * 0.12);
+            oscChime.stop(ctx.currentTime + i * 0.12 + 0.3);
+          });
+          break;
+          
+        case 'spin':
+          // "Last Christmas" melody snippet
+          const lastChristmasMelody = [
+            { freq: 659, time: 0, duration: 0.25 },      // E
+            { freq: 659, time: 0.3, duration: 0.25 },    // E
+            { freq: 784, time: 0.6, duration: 0.3 },     // G
+            { freq: 587, time: 0.95, duration: 0.25 },   // D
+            { freq: 659, time: 1.25, duration: 0.4 }     // E
+          ];
+          
+          lastChristmasMelody.forEach(({ freq, time, duration }) => {
+            const oscMelody = ctx.createOscillator();
+            const gainMelody = ctx.createGain();
+            oscMelody.connect(gainMelody);
+            gainMelody.connect(ctx.destination);
+            oscMelody.type = "sine";
+            oscMelody.frequency.value = freq;
+            gainMelody.gain.setValueAtTime(0, ctx.currentTime + time);
+            gainMelody.gain.linearRampToValueAtTime(0.18, ctx.currentTime + time + 0.02);
+            gainMelody.gain.setValueAtTime(0.18, ctx.currentTime + time + duration - 0.05);
+            gainMelody.gain.linearRampToValueAtTime(0, ctx.currentTime + time + duration);
+            oscMelody.start(ctx.currentTime + time);
+            oscMelody.stop(ctx.currentTime + time + duration);
+          });
+          break;
+          
+        case 'alarm':
+          // "Jingle Bells" alarm - repeating pattern
+          const alarmPattern = [659, 659, 659];
+          alarmPattern.forEach((freq, i) => {
+            const oscAlarm = ctx.createOscillator();
+            const gainAlarm = ctx.createGain();
+            oscAlarm.connect(gainAlarm);
+            gainAlarm.connect(ctx.destination);
+            oscAlarm.type = "sine";
+            oscAlarm.frequency.value = freq;
+            gainAlarm.gain.setValueAtTime(0.22, ctx.currentTime + i * 0.25);
+            gainAlarm.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + i * 0.25 + 0.2);
+            oscAlarm.start(ctx.currentTime + i * 0.25);
+            oscAlarm.stop(ctx.currentTime + i * 0.25 + 0.2);
+          });
+          break;
+          
+        case 'click':
+          // Sleigh bell click
+          [1000, 1500, 2000].forEach((freq, i) => {
+            const oscClick = ctx.createOscillator();
+            const gainClick = ctx.createGain();
+            oscClick.connect(gainClick);
+            gainClick.connect(ctx.destination);
+            oscClick.type = "sine";
+            oscClick.frequency.value = freq;
+            gainClick.gain.setValueAtTime(0.08 / (i + 1), ctx.currentTime);
+            gainClick.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.08);
+            oscClick.start();
+            oscClick.stop(ctx.currentTime + 0.08);
+          });
+          break;
+          
+        case 'success':
+          // "We Wish You a Merry Christmas" snippet - C D D C
+          const merryChristmas = [
+            { freq: 523, time: 0 },      // C
+            { freq: 587, time: 0.15 },   // D
+            { freq: 587, time: 0.3 },    // D
+            { freq: 523, time: 0.45 },   // C
+            { freq: 698, time: 0.6 }     // F (celebration!)
+          ];
+          
+          merryChristmas.forEach(({ freq, time }) => {
+            const oscSuccess = ctx.createOscillator();
+            const gainSuccess = ctx.createGain();
+            oscSuccess.connect(gainSuccess);
+            gainSuccess.connect(ctx.destination);
+            oscSuccess.type = "sine";
+            oscSuccess.frequency.value = freq;
+            gainSuccess.gain.setValueAtTime(0.2, ctx.currentTime + time);
+            gainSuccess.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + time + 0.35);
+            oscSuccess.start(ctx.currentTime + time);
+            oscSuccess.stop(ctx.currentTime + time + 0.35);
+          });
+          break;
+          
+        case 'error':
+          // Sad descending Christmas bells
+          [784, 659, 523, 440].forEach((freq, i) => {
+            const oscError = ctx.createOscillator();
+            const gainError = ctx.createGain();
+            oscError.connect(gainError);
+            gainError.connect(ctx.destination);
+            oscError.type = "sine";
+            oscError.frequency.value = freq;
+            gainError.gain.setValueAtTime(0.15, ctx.currentTime + i * 0.1);
+            gainError.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + i * 0.1 + 0.25);
+            oscError.start(ctx.currentTime + i * 0.1);
+            oscError.stop(ctx.currentTime + i * 0.1 + 0.25);
+          });
+          break;
+      }
+    }
+
+    function playTick() {
+      playSound('tick');
+    }
+
+    function playDing() {
+      playSound('ding');
+    }
+
+    function playSpinSound() {
+      playSound('spin');
+    }
+
+    function playAlarm() {
+      playSound('alarm');
+    }
+
+    function playClick() {
+      playSound('click');
+    }
+
+    function playSuccess() {
+      playSound('success');
+    }
+
+    function playError() {
+      playSound('error');
+    }
+
+    // ==================== Keyboard Shortcuts ====================
+    function setupKeyboardShortcuts() {
+      document.addEventListener('keydown', (e) => {
+        // Space - Start spin
+        if (e.code === 'Space' && !e.target.matches('input, textarea')) {
+          e.preventDefault();
+          startSpin();
+        }
+        // Escape - Stop timer
+        if (e.code === 'Escape') {
+          stopTimer();
+        }
+        // P - Pause/Resume timer
+        if (e.code === 'KeyP' && timerInterval) {
+          timerPaused ? resumeTimer() : pauseTimer();
+        }
+      });
+    }
+
+    // ==================== Initialize ====================
+    // Wait for DOM to be fully loaded before initializing
+    window.addEventListener('load', function() {
+      init();
+    });
+  </script>
+
+  <footer class="footer">
+    Made with <span class="heart">♥</span> by S&CC Team
+  </footer>
+</body>
+</html>
